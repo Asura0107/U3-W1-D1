@@ -7,6 +7,9 @@ form.onsubmit= (event)=> {
     event.preventDefault()
     let value1 : number = firstplay?.value
     let value2 : number = secondplay?.value
+    let diceresult : any = document.querySelector(".diceresult") as HTMLParagraphElement
+    let winner : any = document.querySelector(".winner") as HTMLParagraphElement
+    diceresult.innerText= randomplay
     var difference1:number;
     var difference2:number;
     console.log("il numero scelto dal player 1 è: " +value1);
@@ -26,9 +29,12 @@ form.onsubmit= (event)=> {
     }
     if (difference1 > difference2) {
         console.log("il player 2 è più vicino al risultato");
+        winner.innerText= "player 2"
     }
     else {
         console.log("il player 1 è più vicino al risultato");
+        winner.innerText= "player 1"
+
     }
 };
 

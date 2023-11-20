@@ -6,6 +6,9 @@ form.onsubmit = function (event) {
     event.preventDefault();
     var value1 = firstplay === null || firstplay === void 0 ? void 0 : firstplay.value;
     var value2 = secondplay === null || secondplay === void 0 ? void 0 : secondplay.value;
+    var diceresult = document.querySelector(".diceresult");
+    var winner = document.querySelector(".winner");
+    diceresult.innerText = randomplay;
     var difference1;
     var difference2;
     console.log("il numero scelto dal player 1 è: " + value1);
@@ -25,8 +28,10 @@ form.onsubmit = function (event) {
     }
     if (difference1 > difference2) {
         console.log("il player 2 è più vicino al risultato");
+        winner.innerText = "player 2";
     }
     else {
         console.log("il player 1 è più vicino al risultato");
+        winner.innerText = "player 1";
     }
 };
