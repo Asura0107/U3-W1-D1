@@ -1,6 +1,7 @@
 let firstplay:any = document.querySelector("#firstplayer") as HTMLInputElement | null;
 let secondplay:any = document.querySelector("#secondplayer") as HTMLInputElement | null;
-let randomplay: number = Math.floor(Math.random() * 100);
+// uso il null così se il io input è nullo almeno il mio typescript non crolla, al null si associa il ?
+let randomplay: number = Math.floor(Math.random() *  100+1);
 let form :any = document.querySelector(".form")
 
 form.onsubmit= (event)=> {
@@ -15,6 +16,9 @@ form.onsubmit= (event)=> {
     console.log("il numero scelto dal player 1 è: " +value1);
     console.log("il numero scelto dal player 2 è: " +value2);
     console.log("il numero uscito dal dado è: " + randomplay);
+    // posso usare anche il math.abs per ricavarmi la differenza assoluto
+    // diff= math.abs(randomplay-value1)
+    // diff= math.abs(randomplay-value2)
     if (randomplay >value1) {
         difference1 = randomplay -value1;
     }
